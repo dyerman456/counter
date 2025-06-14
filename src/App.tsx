@@ -5,11 +5,11 @@ import {Button} from "./components/Button";
 
 function App() {
 
-    const [value, setValue] = useState(0)
-    const maxValue = 5
+    let [value, setValue] = useState(0)
+    const maxValue = 10
 
     const Increase = (v: number) => {
-        v < maxValue && setValue(value + 1)
+        v < maxValue && setValue(++value)
     }
     const Reset = () => {
         setValue(0)
@@ -19,19 +19,22 @@ function App() {
         <div className="App">
             <Counter
                 value={value}
-                className={maxValue === value ? "maxCount" : ""}
+                className={`blue-div ${maxValue === value ? "max-count" : ""}`}
+
             />
-            <div>
+            <div className="wrapper">
                 <Button
-                    name={"Inc"}
+                    name="Inc"
                     maxValue={maxValue}
                     callBack={() => {Increase(value)}}
                     disabled={maxValue === value}
+                    className="blue-div"
                 />
                 <Button
-                    name={"Reset"}
+                    name="Reset"
                     callBack={() => {Reset()}}
                     disabled={value === 0}
+                    className="blue-div"
                 />
             </div>
         </div>

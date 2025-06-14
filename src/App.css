@@ -1,3 +1,50 @@
-.maxCount {
+.App {
+    background-color: #002329;
+    border: 3px solid #009cb3;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    width: 500px;
+    height: 300px;
+}
+
+.max-count {
     color: red;
+}
+
+.blue-div {
+    width: 90%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px;
+    background-color: #009cb3;
+    border: 1px solid #009cb3;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.wrapper {
+    border: 3px solid #009cb3;
+    border-radius: 10px;
+    width: 90%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+.wrapper button {
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
 }

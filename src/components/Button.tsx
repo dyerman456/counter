@@ -3,6 +3,7 @@ type ButtonPropsType = {
     callBack: () => void
     maxValue?: number
     disabled: boolean
+    className?: string
 }
 
 export const Button = (props: ButtonPropsType) => {
@@ -12,6 +13,6 @@ export const Button = (props: ButtonPropsType) => {
     }
 
     return (
-        <button onClick={onClickHandler} disabled={props.disabled}>{props.name}</button>
+        <button onClick={onClickHandler} disabled={props.disabled} className={props.className}>{props.name}</button>
     )
 }
