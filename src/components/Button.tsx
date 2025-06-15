@@ -1,7 +1,6 @@
 type ButtonPropsType = {
     name: string
     callBack: () => void
-    maxValue?: number
     disabled: boolean
     className?: string
 }

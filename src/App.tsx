@@ -5,35 +5,36 @@ import {Button} from "./components/Button";
 
 function App() {
 
-    let [value, setValue] = useState(0)
-    const maxValue = 10
+    const minValue = 6
+    const [value, setValue] = useState(minValue)
+    const maxValue = 11
 
-    const Increase = (v: number) => {
-        v < maxValue && setValue(++value)
+    const increase = () => {
+        value < maxValue && setValue(value + 1)
     }
-    const Reset = () => {
-        setValue(0)
+    const reset = () => {
+        setValue(minValue)
     }
+
+    const counterClass = `blue-div ${maxValue === value ? "max-count" : ""}`
 
     return (
         <div className="App">
             <Counter
                 value={value}
-                className={`blue-div ${maxValue === value ? "max-count" : ""}`}
-
+                className={counterClass}
             />
             <div className="wrapper">
                 <Button
                     name="Inc"
-                    maxValue={maxValue}
-                    callBack={() => {Increase(value)}}
-                    disabled={maxValue === value}
+                    callBack={increase}
+                    disabled={value === maxValue}
                     className="blue-div"
                 />
                 <Button
                     name="Reset"
-                    callBack={() => {Reset()}}
-                    disabled={value === 0}
+                    callBack={reset}
+                    disabled={value === minValue}
                     className="blue-div"
                 />
             </div>
